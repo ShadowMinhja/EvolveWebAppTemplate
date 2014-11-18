@@ -14,9 +14,41 @@
     <link href="Content/kendo/2014.2.1008/kendo.flat.min.css" rel="stylesheet" />
     <link href="Content/kendo/2014.2.1008/kendo.dataviz.min.css" rel="stylesheet" />
     <link href="Content/kendo/2014.2.1008/kendo.dataviz.flat.min.css" rel="stylesheet" />
-    <!--<link href="Content/Site.min.css" rel="stylesheet" />-->
+    <link href="Content/Site.min.css" rel="stylesheet" />
 </head>
 <body>
+    <!--CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
+    <!--Popup-->
+    <script id="modal-confirmation" type="text/x-kendo-template">
+        <div class="confirmContent">
+            <p class="modal-message"></p>
+            <button class="modal-confirm k-button">Yes</button>
+            <button class="modal-cancel k-button">No</button>
+        </div>
+    </script>
+    <!--Notification-->
+    <script id="errorTemplate" type="text/x-kendo-template">
+        <div class="popupError">
+            <img src="../Images/error-icon.png" />
+            <h3>#= title #</h3>
+            <p class="notificationMessage">#= message #</p>
+        </div>
+    </script>
+    <script id="warningTemplate" type="text/x-kendo-template">
+        <div class="popupWarning">
+            <img src="../Images/warning-icon.png" />
+            <h3>#= title #</h3>
+            <p class="notificationMessage">#= message #</p>
+        </div>
+    </script>
+    <script id="successTemplate" type="text/x-kendo-template">
+        <div class="popupSuccess">
+            <img src="../Images/success-icon.png" />
+            <h3>#= message #</h3>
+        </div>
+    </script>
+    <span id="cubsNotification"></span>
+    <!--END CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
         <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
         <li><a href="#profile" data-toggle="tab">Profile</a></li>
@@ -53,7 +85,17 @@
         <div class="jumbotron">
             <h1>ASP.NET</h1>
             <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+            <p><a href="#" class="btn btn-primary btn-lg" onclick="new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed', 
+                        function () {
+                            alert('You pressed Yes ^^');
+                        },
+                        function () {
+                            alert('You pressed No :(');
+                        });"
+                  >Hit Me ></a></p>
+            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null);">Yes</a>
+            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null);">No</a>
+            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null);">Maybe So</a>
         </div>
         <div class="row">
             <div class="col-md-4">
