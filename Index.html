@@ -5,24 +5,31 @@
     <title> - My ASP.NET Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <!--<link href="Content/font-awesome.css" rel="stylesheet" />-->
+    <!--<link href="Content/material-wfont.css" rel="stylesheet" />-->
+    <link href="Content/ripples.css" rel="stylesheet" />
+    <link href="Content/material.css" rel="stylesheet" />
+    <!--<link href="Content/Site.css" rel="stylesheet" />-->
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+        <li><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li class="disabled"><a>Disabled</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+                Dropdown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
+                <li class="divider"></li>
+                <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
+            </ul>
+        </li>
+    </ul>
     <div class="container body-content">
+
         <hr />
         <footer>
             <p>&copy; - My ASP.NET Application</p>
@@ -31,3 +38,7 @@
 
 </body>
 </html>
+<script src="Scripts/jquery-1.10.2.js"></script>
+<script src="Scripts/bootstrap.js"></script>
+<script src="Scripts/ripples.js"></script>
+<script src="Scripts/material.js"></script>
