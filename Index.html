@@ -49,83 +49,21 @@
     </script>
     <span id="cubsNotification"></span>
     <!--END CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
-    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-        <li><a href="#profile" data-toggle="tab">Profile</a></li>
-        <li class="disabled"><a>Disabled</a></li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-                Dropdown <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-                <li class="divider"></li>
-                <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-            </ul>
-        </li>
-    </ul>
-    <!--<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>Item1</li>
-                    <li>Item2</li>
-                </ul>
-            </div>
-        </div>
-    </div>-->
-    <div class="container body-content">
-        <div class="jumbotron">
-            <h1>ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="#" class="btn btn-primary btn-lg" onclick="new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed', 
-                        function () {
-                            alert('You pressed Yes ^^');
-                        },
-                        function () {
-                            alert('You pressed No :(');
-                        });"
-                  >Hit Me ></a></p>
-            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null);">Yes</a>
-            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null);">No</a>
-            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null);">Maybe So</a>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Your information</h2>
-                <p>This section shows how you can call ASP.NET Web API to get the user details.</p>
-                <p data-bind="text: myHometown"></p>
-
-                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=273732">Learn more &raquo;</a></p>
-            </div>
-
-            <div class="col-md-4">
-                <h2>Getting started</h2>
-                <p>
-                    ASP.NET Single Page Application (SPA) helps you build applications that include significant client-side interactions using HTML, CSS, and JavaScript.
-                    It's now easier than ever before to getting started writing highly interactive web applications.
-                </p>
-                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=273732">Learn more &raquo;</a></p>
-            </div>
-
-            <div class="col-md-4">
-                <h2>Web Hosting</h2>
-                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-            </div>
-        </div>
-        <hr />
-        <footer>
+    <p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed',
+                function () {
+                    alert('You pressed Yes ^^');
+                },
+                function () {
+                    alert('You pressed No :(');
+                });">Hit Me ></a>
+    </p>
+    <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null);">Yes</a>
+    <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null);">No</a>
+    <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null);">Maybe So</a>
+        <!--<footer>
             <p>&copy; - My ASP.NET Application</p>
-        </footer>
-    </div>
+        </footer>-->
     <script src="Scripts/kendo/2014.2.1008/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/ripples.min.js"></script>
@@ -136,7 +74,7 @@
     <script src="Scripts/controls.js"></script>
     <script>
         $(document).ready(function () {
-
+            $.material.init();
         });
     </script>
 </body>
