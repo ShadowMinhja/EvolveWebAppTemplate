@@ -20,7 +20,7 @@ function getDialogCriticality(message) {
 function showNotification(messageText, titleText, mode, timeOut, posRight, posTop, appendTo) {
     var appendTarget = appendTo;
     if (typeof (notificationHandle) == "undefined") {
-        notificationHandle = $("#cubsNotification").kendoNotification({
+        notificationHandle = $("#notificationSpan").kendoNotification({
             "position": { "right": posRight, "top": posTop },
             "autoHideAfter": timeOut,
             "stacking": "down",
@@ -31,7 +31,7 @@ function showNotification(messageText, titleText, mode, timeOut, posRight, posTo
             ]
         });
     }
-    var notification = $("#cubsNotification").data("kendoNotification");
+    var notification = $("#notificationSpan").data("kendoNotification");
     notification.show({
         message: messageText,
         title: titleText,
