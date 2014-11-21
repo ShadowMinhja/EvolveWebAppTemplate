@@ -5,8 +5,8 @@
     <title> - My ASP.NET Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/material-wfont.min.css" rel="stylesheet" />
     <link href="Content/ripples.min.css" rel="stylesheet" />
     <link href="Content/material.min.css" rel="stylesheet" />
@@ -50,11 +50,11 @@
     <span id="notificationSpan"></span>
     <!--END CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-        <li><a href="#profile" data-toggle="tab">Profile</a></li>
-        <li class="disabled"><a>Disabled</a></li>
+        <li class="active"><a id="Home" href="#home" data-toggle="tab" title="Go to Home. (H)">Home</a></li>
+        <li><a id="Profile" href="#profile" data-toggle="tab" title="Go to Profile. (P)">Profile</a></li>
+        <li id="Disabled" class="disabled" title="Go to Disabled. (P)"><a>Disabled</a></li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+            <a id="Dropdown" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" title="Go to Dropdown. (D)">
                 Dropdown <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
@@ -86,7 +86,7 @@
             <h1>ASP.NET</h1>
             <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
             <p>
-                <a href="#" class="btn btn-primary btn-lg" onclick="new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed',
+                <a id="hitme" href="#" class="btn btn-primary btn-lg" onclick="new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed',
                         function () {
                             alert('You pressed Yes ^^');
                         },
@@ -94,9 +94,9 @@
                             alert('You pressed No :(');
                         });">Hit Me ></a>
             </p>
-            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null);">Yes</a>
-            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null);">No</a>
-            <a href="#" class="btn btn-primary btn-lg" onclick="showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null);">Maybe So</a>
+            <a id="yes" href="#" class="btn btn-primary btn-lg" onclick="showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null);">Yes</a>
+            <a id="no" href="#" class="btn btn-primary btn-lg" onclick="showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null);">No</a>
+            <a id="maybe" href="#" class="btn btn-primary btn-lg" onclick="showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null);">Maybe So</a>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -133,6 +133,7 @@
     <script src="Scripts/ripples.min.js"></script>
     <script src="Scripts/material.min.js"></script>
     <script src="Scripts/kendo/2014.2.1008/kendo.web.min.js"></script>
+    <script src="Scripts/jquery.hotkeys.min.js"></script>
     <script src="Scripts/velocity.min.js"></script>
     <script src="Scripts/core.js"></script>
     <script src="Scripts/layout.js"></script>
@@ -148,14 +149,35 @@
     <script src="app/modules/clearscreen.module.js"></script>
     <script src="app/models/todo.model.js"></script>
     <script src="app/controllers/todo.controller.js"></script>
-    <script src="app/views/todo.view.js"></script>    
+    <script src="app/views/todo.view.js"></script>
     <script>
         var jumbotron = document.getElementsByClassName('jumbotron')[0];
-        m.module(jumbotron, todo);
+        //m.mdule(jumbotron, todo);
 
+
+
+        //Shortcut keys
         $(document).ready(function () {
             $.material.init();
+            jQuery(document).bind('keypress', 'd', function (event) {
+                $("#Dropdown").trigger("click");
+            });
+            jQuery(document).bind('keypress', 'h', function (event) {
+                $("#hitme").trigger("click");
+            });
+            jQuery(document).bind('keypress', 'y', function (event) {
+                $("#yes").trigger("click");
+            });
+            jQuery(document).bind('keypress', 'n', function (event) {
+                $("#no").trigger("click");
+            });
+            jQuery(document).bind('keypress', 'm', function (event) {
+                $("#maybe").trigger("click");
+            });
         });
+        
+        
     </script>
 </body>
 </html>
+
