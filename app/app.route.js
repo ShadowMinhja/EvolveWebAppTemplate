@@ -1,4 +1,8 @@
-﻿m.route($rootContainer, "/", {
+﻿//setup routes to start w/ the `/` symbol
+//m.route.mode = "hash";
+m.route.mode = "pathname";
+
+m.route($rootContainer, "/", {
     "/": app,
     "/profile": app,
     "/todo": todo
@@ -23,9 +27,6 @@ var profile = {
         return m("div");
     }
 }
-//setup routes to start w/ the `/` symbol
-//m.route.mode = "hash";
-m.route.mode = "pathname";
 
 //define a route
 m.route($rootContainer, "/profile/johndoe", {

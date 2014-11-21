@@ -83,46 +83,7 @@
         </div>
     </div>-->
     <div class="container body-content">
-        <div class="jumbotron">
-            <h1>ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p>
-                <a id="hitme" href="#" class="btn btn-primary btn-lg" onclick="new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed',
-                        function () {
-                            alert('You pressed Yes ^^');
-                        },
-                        function () {
-                            alert('You pressed No :(');
-                        });">Hit Me ></a>
-            </p>
-            <a id="yes" href="#" class="btn btn-primary btn-lg" onclick="showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null);">Yes</a>
-            <a id="no" href="#" class="btn btn-primary btn-lg" onclick="showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null);">No</a>
-            <a id="maybe" href="#" class="btn btn-primary btn-lg" onclick="showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null);">Maybe So</a>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Your information</h2>
-                <p>This section shows how you can call ASP.NET Web API to get the user details.</p>
-                <p data-bind="text: myHometown"></p>
-
-                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=273732">Learn more &raquo;</a></p>
-            </div>
-
-            <div class="col-md-4">
-                <h2>Getting started</h2>
-                <p>
-                    ASP.NET Single Page Application (SPA) helps you build applications that include significant client-side interactions using HTML, CSS, and JavaScript.
-                    It's now easier than ever before to getting started writing highly interactive web applications.
-                </p>
-                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=273732">Learn more &raquo;</a></p>
-            </div>
-
-            <div class="col-md-4">
-                <h2>Web Hosting</h2>
-                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-            </div>
-        </div>
+        BODY CONTENT REPLACED BY MITHRIL MVC
         <hr />
         <footer>
             <p>&copy; - My ASP.NET Application</p>
@@ -151,40 +112,15 @@
     <script src="app/models/todo.model.js"></script>
     <script src="app/controllers/todo.controller.js"></script>
     <script src="app/views/todo.view.js"></script>
-<<<<<<< HEAD
     <!-- Routing -->
     <script src="app/app.route.js"></script>
     <script>
         var jumbotron = document.getElementsByClassName('jumbotron')[0];
         //m.module(jumbotron, todo);
-=======
-    <script>
-        var jumbotron = document.getElementsByClassName('jumbotron')[0];
-        //m.mdule(jumbotron, todo);
->>>>>>> origin/master
 
-
-
-        //Shortcut keys
         $(document).ready(function () {
             $.material.init();
-            jQuery(document).bind('keypress', 'd', function (event) {
-                $("#Dropdown").trigger("click");
-            });
-            jQuery(document).bind('keypress', 'h', function (event) {
-                $("#hitme").trigger("click");
-            });
-            jQuery(document).bind('keypress', 'y', function (event) {
-                $("#yes").trigger("click");
-            });
-            jQuery(document).bind('keypress', 'n', function (event) {
-                $("#no").trigger("click");
-            });
-            jQuery(document).bind('keypress', 'm', function (event) {
-                $("#maybe").trigger("click");
-            });
         });
-        
         
     </script>
 </body>
