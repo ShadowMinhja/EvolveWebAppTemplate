@@ -1,11 +1,8 @@
-﻿//setup routes to start w/ the `#` symbol
-m.route.mode = "hash";
-
-//m.route(document.getElementById("mainWindow"), "", {
-//    "": app,
-//    "home": app,
-//    "about":login
-//});
+﻿m.route($rootContainer, "/", {
+    "/": app,
+    "/profile": app,
+    "/todo": todo
+});
 
 ///////////////////////////////
 //a sample module
@@ -18,10 +15,19 @@ var dashboard = {
     }
 }
 
-//setup routes to start w/ the `#` symbol
+var profile = {
+    controller: function () {
+        this.id = m.route.param("userID");
+    },
+    view: function (controller) {
+        return m("div");
+    }
+}
+//setup routes to start w/ the `/` symbol
 //m.route.mode = "hash";
+m.route.mode = "pathname";
 
 //define a route
-//m.route(document.body, "/dashboard/johndoe", {
-//    "/dashboard/:userID": dashboard
-//});
+m.route($rootContainer, "/profile/johndoe", {
+    "/profile/:userID": dashboard
+});

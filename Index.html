@@ -63,6 +63,7 @@
                 <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
             </ul>
         </li>
+        <li><a href="/todo" data-toggle="tab">Todo App</a></li>
     </ul>
     <!--<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -143,15 +144,17 @@
     <script src="app/app.helpers.js"></script>
     <!-- MVC References -->
     <script src="app/app.model.js"></script>
-    <script src="app/app.controller.js"></script>
+    <script src="app/app.controller.js"></script>        
     <script src="app/views/app.view.js"></script>
     <script src="app/modules/clearscreen.module.js"></script>
     <script src="app/models/todo.model.js"></script>
     <script src="app/controllers/todo.controller.js"></script>
-    <script src="app/views/todo.view.js"></script>    
+    <script src="app/views/todo.view.js"></script>
+    <!-- Routing -->
+    <script src="app/app.route.js"></script>
     <script>
         var jumbotron = document.getElementsByClassName('jumbotron')[0];
-        m.module(jumbotron, todo);
+        //m.module(jumbotron, todo);
 
         $(document).ready(function () {
             $.material.init();
