@@ -4,6 +4,7 @@
 var notificationRightPos = 30;
 var notificationTopPos = 30;
 
+var controls = {};
 //#region Notification Messages
 function getDialogCriticality(message) {
     if (message.toLowerCase().indexOf('success') > 0) {
@@ -17,7 +18,7 @@ function getDialogCriticality(message) {
     }
 }
 
-function showNotification(messageText, titleText, mode, timeOut, posRight, posTop, appendTo) {
+controls.showNotification = function (messageText, titleText, mode, timeOut, posRight, posTop, appendTo) {
     var appendTarget = appendTo;
     if (typeof (notificationHandle) == "undefined") {
         notificationHandle = $("#notificationSpan").kendoNotification({
