@@ -49,22 +49,7 @@
     </script>
     <span id="notificationSpan"></span>
     <!--END CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
-    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-        <li class="active"><a id="Home" href="#home" data-toggle="tab" title="Go to Home. (H)">Home</a></li>
-        <li><a id="Profile" href="#profile" data-toggle="tab" title="Go to Profile. (P)">Profile</a></li>
-        <li id="Disabled" class="disabled" title="Go to Disabled. (P)"><a>Disabled</a></li>
-        <li class="dropdown">
-            <a id="Dropdown" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" title="Go to Dropdown. (D)">
-                Dropdown <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-                <li class="divider"></li>
-                <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-            </ul>
-        </li>
-        <li><a href="/todo" data-toggle="tab">Todo App</a></li>
-    </ul>    
+    <ul id="navigation-menu" class="nav nav-tabs" style="margin-bottom: 15px;"></ul>
     <div class="container body-content">
         BODY CONTENT REPLACED BY MITHRIL MVC
         <hr />
@@ -89,8 +74,9 @@
     <script src="app/app.helpers.js"></script>
     <!-- MVC References -->
     <script src="app/app.model.js"></script>
-    <script src="app/app.controller.js"></script>        
+    <script src="app/app.controller.js"></script>
     <script src="app/views/app.view.js"></script>
+    <script src="app/modules/menu.module.js"></script>
     <script src="app/modules/clearscreen.module.js"></script>
     <script src="app/models/todo.model.js"></script>
     <script src="app/controllers/todo.controller.js"></script>
@@ -100,12 +86,13 @@
     <script>
         var jumbotron = document.getElementsByClassName('jumbotron')[0];
         //m.module(jumbotron, todo);
-
+        m.module(document.getElementById('navigation-menu'), menu);
         $(document).ready(function () {
             $.material.init();
         });
-        
+
     </script>
 </body>
+
 </html>
 
