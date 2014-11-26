@@ -22,6 +22,7 @@
     $.material =  {
         "options": {
             "withRipples": [
+                ".tile",
                 ".btn:not(.btn-link)",
                 ".card-image",
                 ".navbar a:not(.withoutripple)",

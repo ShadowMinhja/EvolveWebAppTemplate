@@ -49,49 +49,49 @@
     </script>
     <span id="notificationSpan"></span>
     <!--END CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
-    <ul id="navigation-menu" class="nav nav-tabs" style="margin-bottom: 15px;"></ul>
-    <div class="container body-content">
-        BODY CONTENT REPLACED BY MITHRIL MVC
-        <hr />
-        <footer>
-            <p>&copy; - My ASP.NET Application</p>
-        </footer>
-    </div>
-    <script src="Scripts/mithril.min.js"></script>
-    <script src="Scripts/kendo/2014.2.1008/jquery.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/ripples.min.js"></script>
-    <script src="Scripts/material.min.js"></script>
-    <script src="Scripts/kendo/2014.2.1008/kendo.web.min.js"></script>
-    <script src="Scripts/jquery.hotkeys.min.js"></script>
-    <script src="Scripts/velocity.min.js"></script>
-    <script src="Scripts/core.js"></script>
-    <script src="Scripts/layout.js"></script>
-    <script src="Scripts/controls.js"></script>
-    <!-- Data References -->
-    <script src="app/app.settings.js"></script>
-    <!-- Helper References -->
-    <script src="app/app.helpers.js"></script>
-    <!-- MVC References -->
-    <script src="app/app.model.js"></script>
-    <script src="app/app.controller.js"></script>
-    <script src="app/views/app.view.js"></script>
-    <script src="app/modules/menu.module.js"></script>
-    <script src="app/modules/clearscreen.module.js"></script>
-    <script src="app/models/todo.model.js"></script>
-    <script src="app/controllers/todo.controller.js"></script>
-    <script src="app/views/todo.view.js"></script>
-    <!-- Routing -->
-    <script src="app/app.route.js"></script>
-    <script>
-        var jumbotron = document.getElementsByClassName('jumbotron')[0];
-        //m.module(jumbotron, todo);
-        m.module(document.getElementById('navigation-menu'), menu);
-        $(document).ready(function () {
-            $.material.init();
-        });
+    <div id="tile-nav" class="container"></div>
+        <!--<div class="container body-content">
+            BODY CONTENT REPLACED BY MITHRIL MVC
+            <hr />
+            <footer>
+                <p>&copy; - My ASP.NET Application</p>
+            </footer>
+        </div>-->
+        <script src="Scripts/mithril.min.js"></script>
+        <script src="Scripts/kendo/2014.2.1008/jquery.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/ripples.min.js"></script>
+        <script src="Scripts/material.min.js"></script>
+        <script src="Scripts/kendo/2014.2.1008/kendo.web.min.js"></script>
+        <script src="Scripts/jquery.hotkeys.min.js"></script>
+        <script src="Scripts/velocity.min.js"></script>
+        <script src="Scripts/core.js"></script>
+        <script src="Scripts/layout.js"></script>
+        <script src="Scripts/controls.js"></script>
+        <!-- Data References -->
+        <script src="app/app.settings.js"></script>
+        <!-- Helper References -->
+        <script src="app/app.helpers.js"></script>
+        <!-- MVC References -->
+        <script src="app/app.model.js"></script>
+        <script src="app/app.controller.js"></script>
+        <script src="app/views/app.view.js"></script>
+        <script src="app/modules/menu.module.js"></script>
+        <script src="app/modules/clearscreen.module.js"></script>
+        <script src="app/models/todo.model.js"></script>
+        <script src="app/controllers/todo.controller.js"></script>
+        <script src="app/views/todo.view.js"></script>
+        <!-- Routing -->
+        <script src="app/app.route.js"></script>
+        <script>
+            var jumbotron = document.getElementsByClassName('jumbotron')[0];
+            //m.module(jumbotron, todo);
+            m.module(document.getElementById('tile-nav'), menu);
+            $(document).ready(function () {
+                $.material.init();
+            });
 
-    </script>
+        </script>
 </body>
 
 </html>
