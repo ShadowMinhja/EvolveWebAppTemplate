@@ -2,7 +2,7 @@
 
 //setup routes to start w/ the `/` symbol
 m.route($rootContainer, "/", {
-    "/": app,
+    "/": menu,
     "/home": app,
     "/profile": app,
     "/todo": todo
