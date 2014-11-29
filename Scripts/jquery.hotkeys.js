@@ -17,7 +17,7 @@
  * One small change is: now keys are passed by object { keys: '...' }
  * Might be useful, when you want to pass some other data to your handler
  */
-
+var jQuery = require('./kendo/2014.3.1119/jquery.min.js');
 (function(jQuery) {
 
   jQuery.hotkeys = {

@@ -1,13 +1,13 @@
 ﻿var m = require('../mithril.js');
 var app = require('./app.model.js');
-var $rootContainer = require('./app.settings.js');
+var settings = require('./app.settings.js');
 var menu = require('./modules/menu.module.js');
 var todo = require('./models/todo.model.js');
 
 m.route.mode = "hash";
 
 //setup routes to start w/ the `/` symbol
-m.route($rootContainer, "/", {
+m.route(settings.rootContainer, "/", {
     "/": menu,
     "/home": app,
     "/profile": app,

@@ -1,6 +1,8 @@
 ﻿//app.view.js
 var m = require('../../mithril.js');
 var app = require('../app.model.js');
+var Controls = require('../../controls.js');
+controls = new Controls();
 
 app.view = function (ctrl) {
     return [
@@ -8,10 +10,10 @@ app.view = function (ctrl) {
 		m("h1", "ASP.NET"),
 		m("p.lead", "ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript."),
 		m("p", [
-            [m("a.btn.btn-primary.btn-lg[href='#'][id='hitme']", { onclick : function () { new PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed', function () { alert('You pressed Yes ^^');}, function () { alert('You pressed No TT');});} }, "Hit Me!"), "\n",
-             m("a.btn.btn-primary.btn-lg[href='#'][id='yes']", { onclick: function () { controls.showNotification('YES!!', 'Just a Test', 'Success', 5000, notificationRightPos, notificationTopPos, null); } }, "Yes"), "\n",
-             m("a.btn.btn-primary.btn-lg[href='#'][id='no']", { onclick: function () { controls.showNotification('NO!!', 'Just a Test', 'Error', 5000, notificationRightPos, notificationTopPos, null); } }, "No"), "\n",
-             m("a.btn.btn-primary.btn-lg[href='#'][id='maybe']", { onclick : function() { controls.showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, notificationRightPos, notificationTopPos, null); } }, "Maybe So")]
+            [m("button.btn.btn-primary.btn-lg[id='hitme']", { onclick : function () { new controls.PopupDialog().show(null, 'Are you sure you want to continue?', 'Confirmation Needed', function () { alert('You pressed Yes ^^');}, function () { alert('You pressed No TT');});} }, "Hit Me!"), "\n",
+             m("button.btn.btn-primary.btn-lg[id='yes']", { onclick: function () { controls.showNotification('YES!!', 'Just a Test', 'Success', 5000, 30, 30, null); } }, "Yes"), "\n",
+             m("button.btn.btn-primary.btn-lg[id='no']", { onclick: function () { controls.showNotification('NO!!', 'Just a Test', 'Error', 5000, controls.notificationRightPos, controls.notificationTopPos, null); } }, "No"), "\n",
+             m("button.btn.btn-primary.btn-lg[id='maybe']", { onclick: function () { controls.showNotification('MAYBE SO...', 'Just a Test', 'Warning', 5000, controls.notificationRightPos, controls.notificationTopPos, null); } }, "Maybe So")]
 		])
 	]),
 	m(".row", [
