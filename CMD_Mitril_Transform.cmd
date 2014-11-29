@@ -1,3 +1,3 @@
 REM https://github.com/insin/msx
 
-msx --watch app/src/ app/views/
+msx --watch Scripts/app/src/ Scripts/app/views/

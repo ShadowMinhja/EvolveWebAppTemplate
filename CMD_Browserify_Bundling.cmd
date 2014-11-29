@@ -1,0 +1,1 @@
+browserify -d Scripts/main.js -o Scripts/bundle.js
