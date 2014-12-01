@@ -1,9 +1,21 @@
-﻿body {
+﻿
+
+@font-face {
+	font-family: 'fontawesome';
+	src:url('../fonts/fontawesome-webfont.eot');
+	src:url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+		url('../fonts/fontawesome-webfont.svg') format('svg'),
+		url('../fonts/fontawesome-webfont.woff') format('woff'),
+		url('../fonts/fontawesome-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+body {
     /*padding-top: 50px;*/
-    padding-bottom: 20px;
-    background:url(/Images/cloud.jpg);
-    background-repeat:no-repeat;
-    background-size:100%, 100%;
+    /*padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -26,10 +38,17 @@ textarea {
     max-width: 280px;
 }
 
+
 /* Set padding to display errors that occur during databinding */
 .padding-error {
     padding-top: 20px;
 }
+
+a {
+	color: #f0f0f0;
+	text-decoration: none;
+}
+
 
 @media only screen and (max-width: 767px) {
     .nofloat {
@@ -37,6 +56,7 @@ textarea {
         padding: 10px 15px;
     }
 }
+
 
 /*CUSTOM KENDO STYLES*/
 /**************************Notification Styles*********************************/
@@ -117,155 +137,231 @@ textarea {
 }
 
 
-/**************************Tile*********************************/
 
-.tile-grid {
-	list-style: none;
-	text-align: center;
-	margin: 0 auto;
+
+
+/**************************Right Side Nenu*********************************/
+/* General styles for all menus */
+.right-menu-button {
+    float:right;
+    margin:7px 0;
+    right:0;
+    padding: 7px 0;
 }
 
-.tile-grid li {
-	width: 24%;
-	height: 15em;
-	margin: 0.5%;
-	background: #8CC7DF;
-	color: #fff;
-	display: block;
-	float: left;
-	padding: 1.6em;
-	cursor: pointer;
-	position: relative;
+.right-menu-button.right-menu-button-open {
+	right: 240px;
 }
 
-.tile-grid li.tile-span-2 {
-	width: 49%;
-}
-
-.tile-grid li.tile-span-4 {
-	width: 99%;
-}
-
-.tile-grid li h3 {
-	font-size: 2.6em;
-	font-weight: 100;
-}
-
-.tile-grid li[class^="icon-"]:before,
-.tile-grid li[class*=" icon-"]:before {
-	font-size: 10em;
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	line-height: 3;
-	opacity: 0.4;
-	text-align: right;
-	pointer-events: none;
-}
-
-.tile-temp {
-	display: block;
-	font-size: 2em;
-	opacity: 0.5;
-	-webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
-}
-
-.tile-grid li:hover .tile-temp {
-	opacity: 1;
-}
-
-.tile-overlay {
-	opacity: 0;
+.cbp-spmenu {
+	background: #47a3da;
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #444;
-	-webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease, clip 0.4s ease;
-	-moz-transition: opacity 0.4s ease, -moz-transform 0.4s ease, clip 0.4s ease;
-	transition: opacity 0.4s ease, transform 0.4s ease, clip 0.4s ease;
-	z-index: -1;
-	pointer-events: none;
-	cursor: default;
 }
 
-.tile-close {
-	position: absolute;
-	top: 0.4em;
-	right: 0.4em;
-	width: 2em;
-	height: 2em;
-	text-indent: -9000px;
-	cursor: pointer;
+.cbp-spmenu h3 {
+	color: #afdefa;
+	font-size: 1.9em;
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+	background: #0d77b6;
+}
+
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+	background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+	background: #afdefa;
+	color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
 	z-index: 1000;
 }
 
-.tile-close::before {
-	content: 'x';
-	font-weight: 100;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	font-size: 3em;
-	line-height: 0.6;
-	text-align: center;
-	text-indent: 0px;
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid #258ecd;
+	padding: 1em;
 }
 
-/* Colors */
+/* Vertical menu that slides from the left or right */
 
-.tile-grid li:nth-child(1) { background: #3399CC; }
-.tile-grid li:nth-child(2) { background: #33CCCC; }
-.tile-grid li:nth-child(3) { background: #996699; }
-.tile-grid li:nth-child(4) { background: #C24747; }
-.tile-grid li:nth-child(5) { background: #e2674a; }
-.tile-grid li:nth-child(6) { background: #FFCC66; }
-.tile-grid li:nth-child(7) { background: #99CC99; }
-.tile-grid li:nth-child(8) { background: #669999; }
-.tile-grid li:nth-child(9) { background: #CC6699; }
-.tile-grid li:nth-child(10) { background: #339966; }
-.tile-grid li:nth-child(11) { background: #666699; }
+.cbp-spmenu-right {
+	right: -240px;
+}
 
-
-/* On Hover */
-
-#tile-grid li:hover {
-    -webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
-	border-width: 3px;
-	border-style:solid;
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0;
 }
 
 
-@media screen and (max-width: 63.125em) {
-	
-	.tile-grid li,
-	.tile-grid li.tile-span-2,
-	.tile-grid li.tile-span-4 {
-		width: 100%;
-		height: 10em;
-		text-align: left;
-	}
+/* Transitions */
 
-	.tile-grid li[class^="icon-"]:before,
-	.tile-grid li[class*=" icon-"]:before {
-		font-size: 6em;
-		left: auto;
-		right: 0;
-		line-height: 2.5;
-	}
-
-	.tile-grid li > div {
-		text-align: center;
-	}
+.cbp-spmenu, .right-menu-button {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
+
+/* Example media queries */
+
+@media screen and (max-height: 26.375em) {
+
+    .cbp-spmenu-vertical {
+        font-size: 90%;
+        width: 190px;
+    }
+
+    .cbp-spmenu-right {
+        right: -190px;
+    }
+}
+
+
+
+
+
+/**************************Left Sidebar Menu Hover*********************************/
+
+.fa-2x {
+    font-size: 2em;
+}
+
+.fa {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+}
+
+
+.left-menu:hover,nav.left-menu.expanded {
+    width:250px;
+    overflow:visible;
+}
+
+.left-menu {
+    background:#fbfbfb;
+    border-right:1px solid #e5e5e5;
+    position:absolute;
+    top:0;
+    bottom:0;
+    height:100%;
+    left:0;
+    width:60px;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1,1);
+    z-index:1000;
+}
+
+.left-menu>ul {
+    margin:7px 0;
+}
+
+.left-menu li {
+    position:relative;
+    display:block;
+    width:250px;
+}
+
+.left-menu li>a {
+    position:relative;
+    display:table;
+    border-collapse:collapse;
+    border-spacing:0;
+    color:#999;
+     font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    -webkit-transform:translateZ(0) scale(1,1);
+    -webkit-transition:all .1s linear;
+    transition:all .1s linear;
+}
+
+.left-menu .nav-icon {
+    position:relative;
+    display:table-cell;
+    width:60px;
+    height:36px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:18px;
+}
+
+.left-menu .nav-text {
+    position:relative;
+    display:table-cell;
+    vertical-align:middle;
+    width:190px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.left-menu>ul.logout {
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+
+.no-touch .scrollable.hover {
+    overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+    overflow-y:auto;
+    overflow:visible;
+}
+
+a:hover,a:focus {
+    text-decoration:none;
+}
+
+nav {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+
+nav ul,nav li {
+    outline:0;
+    margin:0;
+    padding:0;
+}
+.main-menu li:hover>a,nav.left-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+    color:#fff;
+    background-color:#5fa2db;
+}
+.area {
+    float: left;
+    background: #e2e2e2;
+    width: 100%;
+    height: 100%;
+}
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+
+
+/**************************Tile*********************************/
