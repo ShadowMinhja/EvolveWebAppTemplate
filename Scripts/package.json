@@ -1,0 +1,12 @@
+{
+  "browserify-shim": {
+    "./kendo/2014.3.1119/jquery.min.js": { "exports": "$" },
+    "jQuery":  "$"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "dependencies": {
+    "browserify-shim": "~3.2.0"
+  }
+}
