@@ -3,18 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <title>eVOLVe Template</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="Content/material-wfont.min.css" rel="stylesheet" />
-    <link href="Content/ripples.min.css" rel="stylesheet" />
-    <link href="Content/material.min.css" rel="stylesheet" />
-    <link href="Content/kendo/2014.2.1008/kendo.common.min.css" rel="stylesheet" />
-    <link href="Content/kendo/2014.2.1008/kendo.flat.min.css" rel="stylesheet" />
-    <link href="Content/kendo/2014.2.1008/kendo.dataviz.min.css" rel="stylesheet" />
-    <link href="Content/kendo/2014.2.1008/kendo.dataviz.flat.min.css" rel="stylesheet" />
-    <link href="Content/Site.min.css" rel="stylesheet" />
+    <link href="Content/bundle.min.css" rel="stylesheet" />
 </head>
 <body class="area">
     <!--CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
@@ -50,133 +41,24 @@
     <span id="notificationSpan"></span>
     <!--END CUSTOM UI SECTION TO BE MOVED TO PARTIAL VIEW-->
     <div id="menu">
-        <!--<nav class="left-menu">
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-home fa-2x"></i>
-                        <span class="nav-text">Dashboard</span>
-                    </a>
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-laptop fa-2x"></i>
-                        <span class="nav-text">UI Components</span>
-                    </a>
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-list fa-2x"></i>
-                        <span class="nav-text">Forms</span>
-                    </a>
-                </li>
-                <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-folder-open fa-2x"></i>
-                        <span class="nav-text">Pages</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
-                        <span class="nav-text">Graphs and Statistics</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-font fa-2x"></i>
-                        <span class="nav-text">Typography and Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">Tables</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-map-marker fa-2x"></i>
-                        <span class="nav-text">Maps</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">Documentation</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="logout">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">Logout</span>
-                    </a>
-                </li>
-            </ul>
+        <nav id="left-menu" class="left-menu">            
         </nav>
-        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="right-menu">
-            <h3>Menu</h3>
-            <a href="#">Register</a>
-            <a href="#">Administration</a>
+        <nav id="right-menu" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
         </nav>
-        <div id="right-menu-button" class="fa fa-cog fa-2x right-menu-button"></div>-->
+        <div id="right-menu-button" class="fa fa-cog fa-2x right-menu-button"></div>
     </div>
     <div class="container body-content">
-        <!--BODY CONTENT REPLACED BY MITHRIL MVC-->
-        <!--<hr />
-        <footer>
-            <p>&copy; - My ASP.NET Application</p>
-        </footer>-->
+        <!--BODY CONTENT REPLACED BY MITHRIL MVC-->        
     </div>
-        <script src="Scripts/mithril.min.js"></script>
-        <script src="Scripts/kendo/2014.2.1008/jquery.min.js"></script>
-        <script src="Scripts/bootstrap.min.js"></script>
-        <script src="Scripts/ripples.min.js"></script>
-        <script src="Scripts/material.min.js"></script>
-        <script src="Scripts/kendo/2014.2.1008/kendo.web.min.js"></script>
-        <script src="Scripts/jquery.hotkeys.min.js"></script>
-        <!--<script src="Scripts/parallax.min.js"></script>-->
-        <script src="Scripts/velocity.min.js"></script>
-        <script src="Scripts/core.js"></script>
-        <script src="Scripts/layout.js"></script>
-        <script src="Scripts/controls.js"></script>
-        <!-- Data References -->
-        <script src="app/app.settings.js"></script>
-        <!-- Helper References -->
-        <script src="app/app.helpers.js"></script>
-        <!-- MVC References -->
-        <script src="app/app.model.js"></script>
-        <script src="app/app.controller.js"></script>
-        <script src="app/views/app.view.js"></script>
-        <script src="app/modules/menu.module.js"></script>
-        <script src="app/modules/clearscreen.module.js"></script>
-        <script src="app/models/todo.model.js"></script>
-        <script src="app/controllers/todo.controller.js"></script>
-        <script src="app/views/todo.view.js"></script>
-        <!-- Routing -->
-        <!--<script src="app/app.route.js"></script>-->
+    <hr />
+    <footer>
+        <p>&copy; - My Application</p>
+    </footer>
+        <script src="Scripts/bundle.js"></script>
         <script>
-            //var jumbotron = document.getElementsByClassName('jumbotron')[0];
-            //m.module(jumbotron, todo);
-            m.module(document.getElementById('menu'), menu);
-
             //var scene = document.getElementById('scene');
             //var parallax = new Parallax(scene);
-
-            $(document).ready(function () {
-                $.material.init();
-            });
-
         </script>
 </body>
-
-
-
-
-
-
-
 </html>
 

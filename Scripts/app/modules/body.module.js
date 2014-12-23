@@ -1,15 +1,15 @@
 ﻿var m = require('../../mithril.js');
-var menu = {}
+var body = {}
 
-menu.Menu = function (data) {
+body.Body = function (data) {
 }
 
-menu.controller = function () {
+body.controller = function () {
 }
 
-menu.view = function () {
+body.view = function () {
     return [
-        [m(".main", [            
+        [m(".main", [
 		        m("ul.tile-grid.clearfix[id='tile-grid']", [
 			        m("li.tile.icon-clima-2", [
 				        m("h3", "Register"),
@@ -29,7 +29,7 @@ menu.view = function () {
 					        m("span.tile-close", "close")
 				        ])
 			        ]),
-			        m("li.tile.icon-clima-1", { onclick: function () { window.location = '/#/todo';} }, [
+			        m("li.tile.icon-clima-1", { onclick: function () { window.location = '/#/todo'; } }, [
 				        m("h3", "todo"),
 				        m(".tile-overlay", [
 					        m("span.tile-close", "close")
@@ -90,4 +90,4 @@ menu.view = function () {
 }
 
 //Browserify Directives
-module.exports = menu
+module.exports = body

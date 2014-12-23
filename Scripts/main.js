@@ -9,12 +9,12 @@ require("./material.min.js");
 require('./kendo/2014.3.1119/kendo.web.min.js');
 require('./jquery.hotkeys.js');
 require('./velocity.js');
+//        <!-- Top level Mithril References -->
+require('./app/app.route.js');
+//        <!-- App References -->
 require('./core.js');
 require('./layout.js');
 require('./controls.js');
-//        <!-- Top level Mithril References -->
-require('./app/modules/clearscreen.module.js');
-require('./app/app.route.js');
 
 $(document).ready(function () {
     $.material.init();
